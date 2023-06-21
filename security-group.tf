@@ -5,7 +5,7 @@ resource "aws_security_group" "allow_redis" {
   vpc_id             = data.terraform_remote_state.vpc.outputs.VPC_ID
 
   ingress {
-    description      = "Allows redis from local network"
+    description      = "Allows docdb from local network"
     from_port        = var.ELASTIC_CACHE_PORT
     to_port          = var.ELASTIC_CACHE_PORT
     protocol         = "tcp"
@@ -13,7 +13,7 @@ resource "aws_security_group" "allow_redis" {
   }
 
   ingress {
-    description      = "Allows redis from default network"
+    description      = "Allows docdb from default network"
     from_port        = var.ELASTIC_CACHE_PORT
     to_port          = var.ELASTIC_CACHE_PORT
     protocol         = "tcp"
